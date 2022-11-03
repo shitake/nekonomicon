@@ -1,11 +1,11 @@
-IMAGE_NAME=nekonomicon
-CONTAINER_NAME=neko
+IMAGE_NAME=nekonomicon-dev
+CONTAINER_NAME=neko-dev
 APP_NAME=nekonomicon
 
 docker build --no-cache \
   -t ${IMAGE_NAME} \
-  --build-arg app_env=dev \
   --build-arg app_name=${APP_NAME} \
+  -f dev.Dockerfile \
   .
 
 docker run \
